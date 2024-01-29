@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24.00dp"
+        app:cardCornerRadius="6.50dp"
+        app:cardElevation="14.00dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="26.00dp"
+            android:background="@drawable/custom_edit_text">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign Up"
+                android:textSize="36.40sp"
+                android:textAlignment="center"
+                android:fontFamily="@font/chewy"
+                android:textColor="@color/lavender"/>
+
+            <EditText
+                android:id="@+id/signup_name"
+                android:layout_width="match_parent"
+                android:layout_height="52.00dp"
+                android:background="@drawable/custom_edit_text"
+                android:layout_marginTop="39.00dp"
+                android:padding="6.50dp"
+                android:drawablePadding="10.40dp"
+                android:textColor="@color/black"
+                android:hint="Name"
+                android:drawableLeft="@drawable/ic_user"/>
+
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="match_parent"
+                android:layout_height="52.00dp"
+                android:background="@drawable/custom_edit_text"
+                android:layout_marginTop="10.00dp"
+                android:padding="6.50dp"
+                android:drawablePadding="10.40dp"
+                android:textColor="@color/black"
+                android:hint="Email"
+                android:drawableLeft="@drawable/ic_at"/>
+
+            <EditText
+                android:id="@+id/signup_username"
+                android:layout_width="match_parent"
+                android:layout_height="52.00dp"
+                android:background="@drawable/custom_edit_text"
+                android:layout_marginTop="10.00dp"
+                android:padding="6.50dp"
+                android:drawablePadding="10.40dp"
+                android:textColor="@color/black"
+                android:hint="UserName"
+                android:drawableLeft="@drawable/ic_username"/>
+
+            <EditText
+                android:id="@+id/signup_password"
+                android:layout_width="match_parent"
+                android:layout_height="52.00dp"
+                android:background="@drawable/custom_edit_text"
+                android:layout_marginTop="10.00dp"
+                android:padding="6.50dp"
+                android:drawablePadding="10.40dp"
+                android:textColor="@color/black"
+                android:hint="Password"
+                android:drawableLeft="@drawable/ic_baseline_lock"/>
+
+            <Button
+                android:id="@+id/signup_button"
+                android:layout_width="match_parent"
+                android:layout_height="65.00dp"
+                android:text="Sign Up"
+                android:fontFamily="@font/bungee"
+                android:textSize="18.20dp"
+                android:layout_marginTop="39.00dp"
+                android:backgroundTint="@color/lavender"
+                app:cornerRadius = "13.00dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loginRedirectText"
+                android:text="Already an user?"
+                android:layout_gravity="center"
+                android:padding="10.40dp"
+                android:layout_marginTop="13.00dp"
+                android:textColor="@color/lavender"
+                android:textSize="15.60dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>

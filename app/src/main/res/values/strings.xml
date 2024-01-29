@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Travelling</string>
+    <string name="motto">Travel Around the World</string>
+    <string name="login">Login</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_checkbox">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="account">Don\'t Have Any Account?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+</resources>

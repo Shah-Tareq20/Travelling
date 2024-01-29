@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeId"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+
+    <item android:title="Transport"
+        android:icon="@drawable/ic_baseline_car_rental_24"
+        android:id="@+id/transportId"/>
+
+    <item android:title="Hotel"
+        android:icon="@drawable/ic_baseline_hotel_24"
+        android:id="@+id/hotelId"/>
+
+    <item
+        android:title="Food"
+        android:icon="@drawable/ic_baseline_restaurant_24"
+        android:id="@+id/foodId"></item>
+
+    <item
+        android:title="More"
+        android:icon="@drawable/ic_baseline_more_24"
+        android:id="@+id/moreId"></item>
+
+
+</menu>
