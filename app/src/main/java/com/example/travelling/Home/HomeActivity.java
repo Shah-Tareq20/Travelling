@@ -9,7 +9,10 @@ import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.example.travelling.Fragments.FoodFragment;
@@ -17,9 +20,10 @@ import com.example.travelling.Fragments.HomeFragment;
 import com.example.travelling.Fragments.HotelFragment;
 import com.example.travelling.Fragments.MoreFragment;
 import com.example.travelling.Fragments.TransportFragment;
+import com.example.travelling.HelperActivity.UserProfileActivity;
 import com.example.travelling.LoginActivity;
 import com.example.travelling.R;
-import com.example.travelling.databinding.ActivityMainBinding;
+import com.example.travelling.SignupActivity;
 import com.example.travelling.models.UserModel;
 import com.example.travelling.sessions.SessionManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,7 +39,7 @@ import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     BottomNavigationView bottomNavigationView;
 
@@ -50,25 +54,27 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_home);
+        //this.setTitle("Home");
 
         notification = findViewById(R.id.notification);
         signOut = findViewById(R.id.log_out);
+        userImage = findViewById(R.id.user_image);
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
         sessionManager = new SessionManager(HomeActivity.this, USER_LOGIN_SESSION);
 
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
+        signOut.setOnClickListener(this);
+        userImage.setOnClickListener(this);
+        //signOut.setOnClickListener(v -> signOut());
+
+       //userImage.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),UserProfileActivity.class)));
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-         bottomNavigationView.setOnItemSelectedListener(navListener);
+        bottomNavigationView.setOnItemSelectedListener(navListener);
 
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_id, new HomeFragment()).commit();
@@ -128,7 +134,7 @@ public class HomeActivity extends AppCompatActivity {
                             Picasso.get()
                                     .load(user.getProfileImage())
                                     .placeholder(R.drawable.ic_launcher_background)
-                                    /*.into(userImage)*/;//Will UnComment this line Later when user image will be uploaded//
+                                    .into(userImage);//Will UnComment this line Later when user image will be uploaded//
 
                             String _name = user.getName();
                             String _username = user.getUserName();
@@ -151,4 +157,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.log_out) {
+            signOut();
+        }
+        if (v.getId() == R.id.user_image) {
+            startActivity(new Intent(getApplicationContext(),UserProfileActivity.class));
+        }
+    }
 }

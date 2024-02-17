@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 
 import com.example.travelling.R;
 
+import butterknife.ButterKnife;
+
 public class HotelFragment extends Fragment {
 
     View view;
@@ -40,7 +42,10 @@ public class HotelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hotel, container, false);
+        view = inflater.inflate(R.layout.fragment_hotel, container, false);
+        ButterKnife.bind(this, view);
+
+        return view;
     }
 
     public void onAttach(Context activity) {

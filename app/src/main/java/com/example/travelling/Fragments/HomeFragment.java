@@ -53,15 +53,20 @@ public class HomeFragment extends Fragment {
         ButterKnife.bind(this, view);
         recyclerView = view.findViewById(R.id.home_frag_recyclerview);
 
-        items.add(new Item("Dhaka", "Bangladesh", R.drawable.dhaka));
+        items.add(new Item("Dhaka", "Bangladesh", R.drawable.place_seven));
         items.add(new Item("Sylhet", "Bangladesh", R.drawable.sylhet));
-        items.add(new Item("Chittagong", "Bangladesh", R.drawable.chittagong));
+        items.add(new Item("Chittagong", "Bangladesh", R.drawable.ctg));
+
+        items.add(new Item("Khulna", "Bangladesh", R.drawable.place_one));
+        items.add(new Item("Rajshahi", "Bangladesh", R.drawable.place_two));
+        items.add(new Item("Cox's Bazar", "Bangladesh", R.drawable.place_three));
+
+        items.add(new Item("Barishal", "Bangladesh", R.drawable.place_four));
+        items.add(new Item("Mymensingh", "Bangladesh", R.drawable.ctg));
+        items.add(new Item("Cumilla", "Bangladesh", R.drawable.place_six));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new HomeAdapter(getContext(),items));
-
-
-
 
         return view;
     }
